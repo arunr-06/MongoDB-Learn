@@ -56,7 +56,6 @@ db.movies.find({$and:[{rating:{$gt:8}},{year:2022}]})
 #Select using multiple AND operator | multiple conditions inside a list
 db.movies.find({$and:[{place:{$ne:'Bangalore'}},{rating:{$gt:8}},{year:{$in:[2019,2022,2023]}},{mode:'Theatre'}]})
 
-chennai rating> 8, delhi or cbe rating < 8.5
 #Select using multiple AND and OR operator
 db.movies.find({$or:[{$and:[{place:'Chennai'},{rating:{$gt:8}}]},{$and:[{place:{$in:['Coimbatore','Delhi']}},{rating:{$lt:8.5}}]}]})
 
