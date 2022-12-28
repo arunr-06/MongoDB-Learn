@@ -8,12 +8,12 @@ db
 use arun
 
 #Create a collection in the active db 
-db. createCollection("movies") 
+db.createCollection("movies") 
 
 #Show all the collections in the db 
 show collections 
 
-#Insert many values inside the collection. insertMany(M in caps)
+#Insert many values inside the collection. insertMany(M in caps) - Inserting as a list with multiple dictionary key:value pairs
 db.movies.insertMany([{name:'PS1', year: 2022 , place: 'Chennai' , mode:'Theatre' , rating: 7.5, amount: 650},
 {name:'Thor', year: 2022 , place: 'Chennai' , mode:'Theatre' , rating: 5.5},
 {name:'Glass&Onion', year: 2022 , place: 'Coimbatore' , mode:'Netflix' , rating: 8.5},
@@ -37,7 +37,7 @@ db.movies.find().limit(3).skip(2)
 #Select movies similar to where = 
 db.movies.find({place:'Coimbatore'})
 
-#Select all except the value mentioned
+#Select all except the value mentioned 
 db.movies.find({place:{$ne:'Coimbatore'}})
 
 #gt is greater than | gte is greater than or = | lt is lesser than | lte is lesser than or equal to
