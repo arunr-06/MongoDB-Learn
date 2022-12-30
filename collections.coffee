@@ -1,3 +1,8 @@
+"""
+Connecting to the Mongo cloud from the CMD in local system 
+Connect -> Connect with MongoDB Shell -> Copy the connection string and paste it in the bin folder of MongoDB in CMD
+"""
+
 #Show all the sample dbs in the cloud environment 
 show dbs 
 
@@ -25,7 +30,7 @@ db.movies.insertMany([{name:'PS1', year: 2022 , place: 'Chennai' , mode:'Theatre
 {name:'Vikram', year: 2022 , place: 'Coimbatore' , mode:'Theatre' , rating: 9.1, amount: 750}])
 #Right click to paste from notepad to cmd. 'cls' to clear all entries in cmd. 
 
-#Show the content in the collection. Similar to select query.
+#Show the content in the collection | Similar to select query.
 db.movies.find()
 
 #Show only top 3 
@@ -58,7 +63,3 @@ db.movies.find({$and:[{place:{$ne:'Bangalore'}},{rating:{$gt:8}},{year:{$in:[201
 
 #Select using multiple AND and OR operator
 db.movies.find({$or:[{$and:[{place:'Chennai'},{rating:{$gt:8}}]},{$and:[{place:{$in:['Coimbatore','Delhi']}},{rating:{$lt:8.5}}]}]})
-
-#Connecting to the Mongo cloud from the local system by connecting through the mongo shell in the command line. 
-#Provide the address in cmd and enter. All the collections created in cmd will be reflected in the browser. 
-#Browser is the cloud. Cmd is the local. Browser is the server. Cmd is client.
